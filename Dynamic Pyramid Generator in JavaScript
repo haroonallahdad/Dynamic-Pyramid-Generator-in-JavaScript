@@ -1,0 +1,77 @@
+console.log("\nPyramid Program using JS\n");
+
+//Values being taken from User/ Can hardcode it but not recommended.
+const character = prompt("Enter a character to display pyramid: ");
+const count = prompt("Enter number of lines to show in pyramid: ");
+const inverted = prompt("Enter true to get inverted pyramid: ").toLowerCase();
+
+//Function for outpud of pyramids
+function output(array){
+    for (i=0; i< array.length; i++){
+    console.log(array[i]);}
+}
+
+//Different Arrays for different Pyramids
+let rows = [];
+let rows2 = [];
+let rows3 = [];
+let rows4 = [];
+let rows5 = [];
+let rows6 = [];
+
+
+//Simple Pyramids Section
+
+//Simple pyramid like right angle triangle
+for(let i=1; i<=count; i++){
+        rows.push(character.repeat(i));
+}
+//Output
+output(rows);
+
+//Left angle pyramid
+console.log("\nSimple Left Angle Pyramid");
+for(i=1; i<=count; i++){
+    rows3.push((" ".repeat(count - i)) + character.repeat(i));
+}
+//Output
+output(rows3);
+
+// Aligned Straight Pyramid
+console.log("\nSimple Pyramid");
+for(i=1; i<=count; i++){
+    rows5.push((" ".repeat((count-i))) + character.repeat((i*2)-1) );
+}
+//Output
+output(rows5);
+
+
+//Inverted Pyramids Section
+
+if(inverted == "true"){
+    //Inverted right angle pyramid
+    console.log("\nInverted Right Angle Pyramid");
+    for(i=count; i>0; i--){
+        rows2.push(character.repeat(i));
+    }
+    //Output
+    output(rows2);
+    
+    //Inverted Left Pyramid
+    console.log("\nInverted Left Angle Pyramid");
+    for(i=count; i>0; i--){
+        rows4.push((" ".repeat(count - i)) + character.repeat(i));
+    }
+    //Output
+    output(rows4);
+    
+    //Aligned Inverted Pyramid
+    console.log("\nInverted Pyramid");
+    for(i=count; i>0; i--){
+        rows6.push((" ".repeat(count-i)) + character.repeat((i*2)-1));
+    }
+    //Output
+    output(rows6);
+}
+
+
